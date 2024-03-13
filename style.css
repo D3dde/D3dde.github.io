@@ -21,6 +21,6 @@ h2 {
 .title {
     background-image: linear-gradient(#1F262D, #14181C);
     margin: 0;
-    padding: 200px;
+    padding-down: 200px;
     padding-top: 50px;
 }
