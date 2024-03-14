@@ -31,22 +31,26 @@ h3{
 }
 a:link {
     color: #5F4747;
-  }
+}
   
-  /* visited link */
-  a:visited {
+
+a:visited {
     color: #5F4747;
-  }
+}
   
-  /* mouse over link */
-  a:hover {
-    color: #6A8AA3;
-  }
+
+a:hover {
+  color: #6A8AA3;
+  text-shadow: 1px 1px 2px black, 0 0 25px #6A8AA3, 0 0 5px #5F4747;
+}
   
-  /* selected link */
-  a:active {
-    color: #6A8AA3;
-  }
+
+a:active {
+  color: #6A8AA3;
+  text-shadow: 1px 1px 2px black, 0 0 25px #6A8AA3;
+}
+
+
 @media only screen and (max-width: 1000px) {
     h1 {
         font-size: 24px;
@@ -65,14 +69,18 @@ a:link {
         margin-right: auto;
     }
     #info{
-        box-align: center;
-        text-align:center;
+        max-width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #div1{
+    position:relative;
+    top: -50px;
     }
 }
 
 @media only screen and (min-width: 1000px) {
     #qrCode{
-        
         width: 300px;
         float:left;
     }
@@ -88,9 +96,13 @@ a:link {
         padding-bottom: 150px;
     }
     h2{
-        margin-top:50px;
+        margin-top: 35px;
     }
     h1{
         font-size: 24px;
+    }
+    #div1{
+        position:relative;
+        top: -100px;
     }
 }
