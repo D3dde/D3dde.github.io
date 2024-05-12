@@ -19,6 +19,10 @@ h2 {
 #info{
     margin-top:50px;
 }
+.align{
+    text-align: center;
+    padding-top: 20px;
+}
 .title {
     background-image: linear-gradient(#1F262D, #14181C);
     margin: 0;
