@@ -3,30 +3,122 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Dedde</title>
+        <meta
+            name="description"
+            content="Personal site of D3dde - gaming, hiking, coding and film."
+        />
+        <meta name="color-scheme" content="dark light" />
+        <meta name="theme-color" content="#1a1b1e" />
+        <title>D3dde</title>
         <link rel="stylesheet" href="style.css" />
         <link rel="icon" type="image/x-icon" href="favicon.ico" />
+        <script>
+            (function () {
+                try {
+                    var theme = localStorage.getItem("theme");
+                    if (theme !== "light" && theme !== "dark") {
+                        theme = window.matchMedia("(prefers-color-scheme: light)")
+                            .matches
+                            ? "light"
+                            : "dark";
+                    }
+                    if (theme === "light") {
+                        document.documentElement.classList.add("light");
+                    }
+                } catch (e) {}
+            })();
+        </script>
+        <script src="script.js" defer></script>
     </head>
 
     <body>
-        <header id="header">
-            <a id="homepage" href="./index.html">&#xf094</a>
-            <h1 id="title">about D3dde</h1>
-            <button id="dark-mode" onclick="debug()">&#xf4ee</button>
-        </header>
-        <div id="body">
-            <div id="info">
-                <h2>Hi<br> Welcome to my corner of Internet.</h2>
+        <a class="skip-link" href="#main">Skip to content</a>
 
-                <h2>I really like playing:<br><a class="link" href="https://steamcommunity.com/id/dedde2707/">&#xf1b6</a> <=> <a class="link" href="https://backloggd.com/u/Dedde/">&#xf0eb7</a></h2>
-                <h2>and hiking:<br><a class="link" href="https://www.openstreetmap.org/user/D3dde">&#xf279</a></h2>
-                <h2>and coding:<br><a class="link" href="https://d3dde.itch.io/">&#xe7ee</a> <=> <a class="link" href="https://github.com/D3dde">&#xe8da</a> <=> <a class="link" href="https://github.com/D3dde/D3ddeland">&#xf08c7</a></h2>
-                <h2>aaand watch movies, tv series and more...</h2>
-            </div>
-        </div>
-        <footer id="footer">
-            <p>GitHub repo <a id="repo" href="https://github.com/D3dde/d3dde.github.io">&#xe709</a></p>
+        <header class="site-header">
+            <a class="home-link" href="./index.html" aria-label="Home" title="Home"
+                ><span class="glyph icon-home">&#xf015;</span></a
+            >
+            <h1 class="site-title">about D3dde</h1>
+            <button
+                id="theme-toggle"
+                class="theme-toggle"
+                type="button"
+                aria-label="Switch to light mode"
+                aria-pressed="false"
+                title="Switch to light mode"
+            >
+                <span id="theme-icon" class="glyph icon-sun">&#xe30d;</span>
+            </button>
+        </header>
+
+        <main id="main" class="content">
+            <p class="intro">
+                Hi,<br />
+                <span>welcome to my corner of the Internet.</span>
+            </p>
+
+            <ul class="link-list">
+                <li>
+                    <span class="label">I really like coding</span>
+                    <span class="icons">
+                        <a
+                            class="icon-link"
+                            href="https://github.com/D3dde"
+                            aria-label="GitHub"
+                            title="GitHub"
+                            ><span class="glyph icon-github">&#xf09b;</span></a
+                        >
+                    </span>
+                </li>
+                <li>
+                    <span class="label">and playing</span>
+                    <span class="icons">
+                        <a
+                            class="icon-link"
+                            href="https://steamcommunity.com/id/dedde2707/"
+                            aria-label="Steam"
+                            title="Steam"
+                            ><span class="glyph icon-steam">&#xf1b6;</span></a
+                        >
+                    </span>
+                </li>
+                <li>
+                    <span class="label">and hiking</span>
+                    <span class="icons">
+                        <a
+                            class="icon-link"
+                            href="https://www.openstreetmap.org/user/D3dde"
+                            aria-label="OpenStreetMap"
+                            title="OpenStreetMap"
+                            ><span class="glyph icon-map">&#xf279;</span></a
+                        >
+                    </span>
+                </li>
+                <li>
+                    <span class="label">aaand watch movies, tv series and more...</span>
+                    <span class="icons">
+                        <a
+                            class="icon-link"
+                            href="https://letterboxd.com/D3dde/"
+                            aria-label="Letterboxd"
+                            title="Letterboxd"
+                            ><span class="glyph icon-film">&#xf008;</span></a
+                        >
+                    </span>
+                </li>
+            </ul>
+        </main>
+
+        <footer class="site-footer">
+            <a
+                class="repo-link"
+                href="https://github.com/D3dde/d3dde.github.io"
+                aria-label="GitHub repository"
+                title="GitHub repository"
+            >
+                <span>GitHub repo</span>
+                <span class="glyph icon-github repo-icon">&#xf09b;</span>
+            </a>
         </footer>
     </body>
-    <script src="script.js"></script>
 </html>
